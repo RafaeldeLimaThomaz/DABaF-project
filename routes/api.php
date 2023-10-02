@@ -17,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+
+Route::middleware(['auth'])->group(function () {
+    
+    Route::get('/users', function () {
+        return response()->json(['message' => 'List of users']);
+    });
+
+    Route::get('/login', function () {
+        return response()->json(['message' => 'List of users']);
+    });
+});
