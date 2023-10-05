@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Post;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class PostController extends BaseController
@@ -12,10 +13,20 @@ class PostController extends BaseController
         return view('postForm');
     }
 
+    /**
+     * Redirects the user to the "posts" route.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(CreatePostRequest $request) {
 
         $data = $request->validated();
         Post::create($data);
-        return response()->json(['message' => 'Profile creation was successful'], 200);
+        return redirect()->route('posts.all');
+    }
+
+    public function all() {
+        $posts = Post::all(); 
+        return view('allPosts', compact('posts')); 
     }
 }

@@ -25,9 +25,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/post/form', 
-    [App\Http\Controllers\PostController::class, 'getPostForm']);
+    [App\Http\Controllers\PostController::class, 'getPostForm'])->name('post.form');
 
     Route::post('/post/create', 
-    [App\Http\Controllers\PostController::class, 'store'])->name('post_create');
+    [App\Http\Controllers\PostController::class, 'store'])->name('post.create');
+
+    Route::get('/posts/all', 
+    [App\Http\Controllers\PostController::class, 'all'])->name('posts.all');
     
 });

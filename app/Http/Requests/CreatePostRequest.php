@@ -24,6 +24,7 @@ class CreatePostRequest extends FormRequest
         return [
             'title' => 'required|string|min:6|max:20',
             'description' => 'required|string|max:50',
+            'age' => 'required|integer|min:12'
         ];
     }
 }
