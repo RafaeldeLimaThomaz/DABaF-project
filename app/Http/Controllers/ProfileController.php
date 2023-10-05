@@ -17,7 +17,9 @@ use Illuminate\Routing\Controller as BaseController;
 
 class ProfileController extends BaseController
 {
-    use AuthorizesRequests, ValidatesRequests;
+    public function getProfileForm() {
+        return view('profileForm');
+    }
 
     public function store(CreateProfileRequest $request) {
 

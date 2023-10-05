@@ -22,23 +22,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/users', function () {
-        return response()->json(['message' => 'List of users']);
-    });
+    Route::get('/post/form', 
+    [App\Http\Controllers\PostController::class, 'getPostForm']);
 
-    Route::post('/profile/create', 
-    [App\Http\Controllers\ProfileController::class, 'store']);
-   
-
-    Route::get('/profile/find/{id}', 
-    [App\Http\Controllers\ProfileController::class, 'find']);
-
-    Route::get('/profile/update/{id}', 
-    [App\Http\Controllers\ProfileController::class, 'update']);
-
-    Route::get('/profile/delete/{id}', 
-    [App\Http\Controllers\ProfileController::class, 'destroy']);
+    Route::post('/post/create', 
+    [App\Http\Controllers\PostController::class, 'store'])->name('post_create');
+    
 });
