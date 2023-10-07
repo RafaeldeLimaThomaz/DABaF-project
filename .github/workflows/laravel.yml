@@ -39,4 +39,5 @@ jobs:
         DB_DATABASE: dabaf
         DB_USERNAME: root
         DB_PASSWORD: root
+        DB_PORT: 3388
       run: vendor/bin/phpunit
