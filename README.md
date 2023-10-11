@@ -1,5 +1,5 @@
 
-# Setup Docker / Laravel / MySQL para disciplina DABaF
+# Setup Docker / Laravel / MySQL to DABaF course
 
 ![New post](./images/image1.png)
 
