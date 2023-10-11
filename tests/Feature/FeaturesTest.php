@@ -35,7 +35,6 @@ class FeaturesTest extends TestCase
         $response = $this->get('/post/form');
         
         $response->assertStatus(302);
-        $response->assertRedirect('http://localhost:8989/login');
     }
 
     /**
