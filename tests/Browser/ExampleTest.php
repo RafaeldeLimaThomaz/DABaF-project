@@ -3,7 +3,7 @@
 namespace Tests\Browser;
 
 use Tests\DuskTestCase;
-use Laravel\Dusk\Browser as DuskBrowser;
+use Laravel\Dusk\Browser;
 
 class ExampleTest extends DuskTestCase
 {
@@ -12,7 +12,7 @@ class ExampleTest extends DuskTestCase
      */
     public function testBasicExample(): void
     {
-        $this->browse(function (DuskBrowser $browser) {
+        $this->browse(function (Browser $browser) {
             $browser->visit('/')
                     ->assertSee('Laravel');
         });
